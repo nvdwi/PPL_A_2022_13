@@ -24,16 +24,16 @@
 		
 		if ($valid){
 			if ($user == 'mahasiswa'){
-				$query = " SELECT * FROM mahasiswa WHERE nama='".$username."' AND password='".$password."' ";
+				$query = " SELECT * FROM mahasiswa WHERE username='".$username."' AND password='".$password."' ";
 			}
 			if ($user == 'dosen'){
-				$query = " SELECT * FROM dosen WHERE nama='".$username."' AND password='".$password."' ";
+				$query = " SELECT * FROM dosen WHERE username='".$username."' AND password='".$password."' ";
 			}
 			if ($user == 'departemen'){
-				$query = " SELECT * FROM departemen WHERE nama='".$username."' AND password='".$password."' ";
+				$query = " SELECT * FROM departemen WHERE username='".$username."' AND password='".$password."' ";
 			}
 			if ($user == 'operator'){
-				$query = " SELECT * FROM staf WHERE nama='".$username."' AND password='".$password."' ";
+				$query = " SELECT * FROM staf WHERE username='".$username."' AND password='".$password."' ";
 			}
 			
 			$result = $db->query($query);
