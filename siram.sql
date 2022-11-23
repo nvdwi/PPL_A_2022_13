@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2022 at 01:15 PM
+-- Generation Time: Nov 16, 2022 at 03:56 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -29,8 +29,16 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `departemen` (
   `kode_departemen` char(6) NOT NULL,
-  `nama` varchar(36) NOT NULL
+  `nama` varchar(36) NOT NULL,
+  `password` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `departemen`
+--
+
+INSERT INTO `departemen` (`kode_departemen`, `nama`, `password`) VALUES
+('001', 'Informatika', '12345');
 
 -- --------------------------------------------------------
 
@@ -45,8 +53,16 @@ CREATE TABLE `dosen` (
   `email` varchar(36) NOT NULL,
   `nomor_hp` varchar(15) NOT NULL,
   `status` varchar(20) NOT NULL,
-  `kode_departemen` char(4) NOT NULL
+  `kode_departemen` char(4) NOT NULL,
+  `password` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `dosen`
+--
+
+INSERT INTO `dosen` (`nama`, `nip`, `alamat`, `email`, `nomor_hp`, `status`, `kode_departemen`, `password`) VALUES
+('Fajar Ivano Gamawan', 2313131, 'fff', 'gamawan33@gmail.com', '32121', 'Sehat', '001', '12345');
 
 -- --------------------------------------------------------
 
@@ -127,19 +143,20 @@ CREATE TABLE `mahasiswa` (
   `jalur_masuk` varchar(20) NOT NULL,
   `email` varchar(36) NOT NULL,
   `nomor_hp` varchar(15) NOT NULL,
-  `status` varchar(20) NOT NULL
+  `status` varchar(20) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `mahasiswa`
 --
 
-INSERT INTO `mahasiswa` (`nama`, `nim`, `alamat`, `angkatan`, `jalur_masuk`, `email`, `nomor_hp`, `status`) VALUES
-('Kate Bishop', '24060119120006', 'Jalan Prof. Sudarto', 2019, 'SNMPTN', 'katebishop@gmail.com', '082134507132', 'SEDANG'),
-('America Chavez', '24060119130013', 'Jalan Tirto Agung', 2019, 'SBMPTN', 'americachavez@gmail.com', '089611456753', 'AKTIF'),
-('Peter Parker', '24060119140008', 'Jalan Jurang Belimbing', 2019, 'Mandiri', 'peterparker@gmail.com', '082134517132', 'AKTIF'),
-('Shang-Chi', '24060119140105', 'Jalan Banjarsari Selatan', 2019, 'Mandiri', 'shangchi@gmail.com', '089611456764', 'AKTIF'),
-('TEST', '56565656', 'LLLLL', 2020, 'SNMPTN', 'michelle@yahoo.com', '908080808', 'AKTIF');
+INSERT INTO `mahasiswa` (`nama`, `nim`, `alamat`, `angkatan`, `jalur_masuk`, `email`, `nomor_hp`, `status`, `password`) VALUES
+('Kate Bishop', '24060119120006', 'Jalan Prof. Sudarto', 2019, 'SNMPTN', 'katebishop@gmail.com', '082134507132', 'SEDANG', '12345'),
+('America Chavez', '24060119130013', 'Jalan Tirto Agung', 2019, 'SBMPTN', 'americachavez@gmail.com', '089611456753', 'AKTIF', '12345'),
+('Peter Parker', '24060119140008', 'Jalan Jurang Belimbing', 2019, 'Mandiri', 'peterparker@gmail.com', '082134517132', 'AKTIF', '12345'),
+('Shang-Chi', '24060119140105', 'Jalan Banjarsari Selatan', 2019, 'Mandiri', 'shangchi@gmail.com', '089611456764', 'AKTIF', '12345'),
+('TEST', '56565656', 'LLLLL', 2020, 'SNMPTN', 'michelle@yahoo.com', '908080808', 'AKTIF', '12345');
 
 -- --------------------------------------------------------
 
@@ -201,8 +218,16 @@ CREATE TABLE `staf` (
   `email` varchar(36) NOT NULL,
   `nomor_hp` varchar(15) NOT NULL,
   `status` varchar(20) NOT NULL,
-  `kode_departemen` char(6) NOT NULL
+  `kode_departemen` char(6) NOT NULL,
+  `password` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `staf`
+--
+
+INSERT INTO `staf` (`nama`, `id`, `alamat`, `email`, `nomor_hp`, `status`, `kode_departemen`, `password`) VALUES
+('Fajar Ivano Gamawan', '1', 'a', 'gamawan33@gmail.com', '32121', 'Sehat', '001', '12345');
 
 --
 -- Indexes for dumped tables
